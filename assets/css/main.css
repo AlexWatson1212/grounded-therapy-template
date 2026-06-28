@@ -40,6 +40,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body:has(.nav-toggle:checked) {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -75,7 +79,7 @@ main[id] {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(237, 241, 239, 0.94);
+  background: rgba(237, 241, 239, 0.96);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(18, 27, 26, 0.08);
@@ -86,12 +90,11 @@ main[id] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 36px;
+  gap: 34px;
   position: relative;
 }
 
-.site-logo,
-.site-logo-image {
+.site-logo {
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
@@ -775,10 +778,6 @@ CSS PART 3 — RESPONSIVE, MOBILE NAV, MOBILE POLISH
 @media (max-width: 760px) {
   html {
     scroll-padding-top: 82px;
-  }
-
-  body:has(.nav-toggle:checked) {
-    overflow: hidden;
   }
 
   section[id],
