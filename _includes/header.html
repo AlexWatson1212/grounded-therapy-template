@@ -1,12 +1,8 @@
 <header class="site-header">
   <div class="container header-inner">
 
-    <a href="{{ '/' | relative_url }}" class="site-logo" aria-label="Michael Doe Counselling home">
-      <img
-        src="{{ '/assets/images/michael-doe-logo.webp' | relative_url }}"
-        alt="Michael Doe Counselling"
-        class="header-logo-img"
-      >
+    <a href="{{ '/' | relative_url }}" class="site-logo" aria-label="Alexander Watson Counselling home">
+      <span class="site-logo-text">Alexander Watson Counselling</span>
     </a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
@@ -18,11 +14,10 @@
     </label>
 
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="#support">Support</a>
-      <a href="#how-it-works">How it works</a>
-      <a href="#first-session">First session</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="nav-button">Get in touch</a>
+      <a href="{{ '/how-i-work/' | relative_url }}">How I work</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/fees/' | relative_url }}">Fees</a>
+      <a href="{{ '/contact/' | relative_url }}" class="nav-button">Get in touch</a>
     </nav>
 
   </div>
