@@ -1,10 +1,17 @@
-title: Alexander Watson Counselling
-description: Counselling in Stockport and online. A calm, thoughtful space to understand yourself more clearly and relate to life with greater steadiness.
-
-url: "https://alexanderwatsoncounselling.co.uk"
+title: Michael Doe Counselling
+short_title: Michael Doe
+email: hello@michaeldoecounselling.co.uk
+phone: "0161 000 0000"
+description: Calm, relational counselling for adults in Stockport and online.
+url: https://alexanderwatsoncounselling.co.uk
 baseurl: ""
-
+location: Stockport, Greater Manchester
+form_endpoint: https://formspree.io/f/REPLACE_ME
+demo: true
 markdown: kramdown
-
-plugins:
-  - jekyll-seo-tag
+permalink: pretty
+exclude:
+  - README.md
+  - IMAGE_PROMPTS.md
+  - FULL_CODE.md
+  - michael-doe-premium-site.zip

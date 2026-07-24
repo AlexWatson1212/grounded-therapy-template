@@ -1,28 +1,56 @@
+<section class="crisis-strip" aria-labelledby="urgent-support-title">
+  <div class="shell crisis-grid">
+    <div>
+      <p class="eyebrow eyebrow-light">Urgent support</p>
+      <h2 id="urgent-support-title">This practice is not an emergency service.</h2>
+    </div>
+    <p>If you or someone else is in immediate danger, call <strong>999</strong> or go to A&amp;E. For urgent mental health help that is not an emergency, use NHS 111 online or call 111 and select the mental health option. Samaritans are available free on <strong>116 123</strong>.</p>
+  </div>
+</section>
+
 <footer class="site-footer">
-  <div class="container footer-simple">
-
-    <p class="footer-kicker">Counselling in Stockport and online</p>
-
-    <h3 class="footer-title">Alexander Watson Counselling</h3>
-
-    <p class="footer-description">
-      A calm, thoughtful space to understand yourself more clearly and relate to life with greater steadiness.
-    </p>
-
-    <div class="footer-links">
-      <a href="{{ '/how-i-work/' | relative_url }}">How I work</a>
-      <a href="{{ '/fees/' | relative_url }}">Fees</a>
-      <a href="{{ '/contact/' | relative_url }}">Get in touch</a>
+  <div class="shell footer-grid">
+    <div class="footer-intro">
+      <a class="brand brand-footer" href="{{ '/' | relative_url }}">
+        <span class="brand-mark" aria-hidden="true">MD</span>
+        <span class="brand-copy">
+          <span class="brand-name">Michael Doe</span>
+          <span class="brand-discipline">Counselling</span>
+        </span>
+      </a>
+      <p>Calm, relational counselling for adults in Stockport and online.</p>
     </div>
 
-    <p class="footer-disclaimer">
-      Counselling is not an emergency service. If you are in immediate danger or feel unable to keep yourself safe,
-      contact emergency services, NHS 111, Samaritans on 116 123, or your local crisis service.
-    </p>
+    <div>
+      <p class="footer-heading">Explore</p>
+      <ul class="footer-links">
+        <li><a href="{{ '/support/' | relative_url }}">Support</a></li>
+        <li><a href="{{ '/how-i-work/' | relative_url }}">How it works</a></li>
+        <li><a href="{{ '/first-session/' | relative_url }}">First session</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      </ul>
+    </div>
 
-    <p class="footer-copyright">
-      © {{ site.time | date: "%Y" }} Alexander Watson. All rights reserved.
-    </p>
+    <div>
+      <p class="footer-heading">Contact</p>
+      <ul class="footer-links">
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li><a href="tel:+441610000000">{{ site.phone }}</a></li>
+        <li>{{ site.location }}</li>
+      </ul>
+    </div>
 
+    <div>
+      <p class="footer-heading">Information</p>
+      <ul class="footer-links">
+        <li><a href="{{ '/privacy/' | relative_url }}">Privacy</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Enquiries</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="shell footer-bottom">
+    <p>© <span data-current-year>2026</span> {{ site.title }}.</p>
+    {% if site.demo %}<p>Demonstration content only.</p>{% endif %}
   </div>
 </footer>

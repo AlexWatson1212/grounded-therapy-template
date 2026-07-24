@@ -1,50 +1,30 @@
-<header class="site-header">
-  <div class="container header-inner">
-
-    <a href="{{ '/' | relative_url }}" class="site-logo" aria-label="Alexander Watson Counselling home">
-      <span class="site-logo-text">Alexander Watson Counselling</span>
+<header class="site-header" data-header>
+  <div class="shell header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+      <span class="brand-mark" aria-hidden="true">MD</span>
+      <span class="brand-copy">
+        <span class="brand-name">Michael Doe</span>
+        <span class="brand-discipline">Counselling</span>
+      </span>
     </a>
 
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+      <span class="nav-toggle-label">Menu</span>
+      <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span></span>
+    </button>
 
-    <label for="nav-toggle" class="nav-toggle-label" aria-label="Open menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-
-    <nav class="site-nav" aria-label="Main navigation">
-      <a href="{{ '/how-i-work/' | relative_url }}">How I work</a>
-      <a href="{{ '/about/' | relative_url }}">About</a>
-      <a href="{{ '/fees/' | relative_url }}">Fees</a>
-      <a href="{{ '/contact/' | relative_url }}" class="nav-button">Get in touch</a>
+    <nav class="primary-nav" id="primary-navigation" aria-label="Primary" data-nav>
+      <a href="{{ '/support/' | relative_url }}" {% if page.url == '/support/' %}aria-current="page"{% endif %}>Support</a>
+      <a href="{{ '/how-i-work/' | relative_url }}" {% if page.url == '/how-i-work/' %}aria-current="page"{% endif %}>How it works</a>
+      <a href="{{ '/first-session/' | relative_url }}" {% if page.url == '/first-session/' %}aria-current="page"{% endif %}>First session</a>
+      <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
+      <a class="nav-cta" href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Get in touch</a>
     </nav>
-
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const navToggle = document.getElementById('nav-toggle');
-      const navLinks = document.querySelectorAll('.site-nav a');
-
-      function closeMobileNav() {
-        if (navToggle) {
-          navToggle.checked = false;
-        }
-
-        document.body.style.overflow = '';
-      }
-
-      navLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-          closeMobileNav();
-        });
-      });
-
-      window.addEventListener('hashchange', function () {
-        closeMobileNav();
-      });
-    });
-  </script>
-
+  {% if site.demo %}
+  <div class="demo-bar">
+    <div class="shell"><strong>Demo website template — not a real counselling service.</strong> Every word, image, fee and professional detail must be replaced and verified before launch.</div>
+  </div>
+  {% endif %}
 </header>

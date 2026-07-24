@@ -1,34 +1,40 @@
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F8F6F2">
+{% if site.demo %}<meta name="robots" content="noindex, nofollow, noarchive">{% endif %}
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
+{% assign page_title = page.title | default: site.title %}
+{% assign page_description = page.description | default: site.description %}
+{% assign canonical_path = page.url | default: '/' %}
 
-{% seo %}
+<title>{% if page.title %}{{ page.title }} · {{ site.short_title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page_description | escape }}">
+<link rel="canonical" href="{{ canonical_path | absolute_url }}">
 
-<meta
-  name="theme-color"
-  content="#edf1ef"
->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ page_description | escape }}">
+<meta property="og:url" content="{{ canonical_path | absolute_url }}">
+<meta property="og:image" content="{{ page.social_image | default: '/assets/images/og-image.webp' | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
 
-<link
-  rel="preconnect"
-  href="https://fonts.googleapis.com"
->
+<link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
-<link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossorigin
->
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-  rel="stylesheet"
->
-
-<link
-  rel="stylesheet"
-  href="{{ '/assets/css/main.css?v=1' | relative_url }}"
->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "description": "{{ site.description | escape }}",
+  "areaServed": "{{ site.location }}",
+  "email": "{{ site.email }}",
+  "telephone": "{{ site.phone }}"
+}
+</script>
